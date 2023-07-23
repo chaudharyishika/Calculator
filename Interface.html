@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <title>Calculator</title>
+    </head>
+    <style>
+        .cal{
+            display: block;
+            background-color: cornflowerblue;
+            border-radius: 12px;
+            padding: 10px;
+            height: 200px;
+            width: 300px;
+            padding-top: 30px;
+            padding-bottom: 120px;
+            padding-left: 40px;
+            
+            
+        }
+        .one{
+           justify-content: space-between;
+           padding-bottom: 6px;
+           
+        }
+        .two,.three,.four,.five{
+            padding-bottom: 6px;
+        }
+        .b{
+            border-radius: 12px;
+        }
+       #id1,#id2,#id3,#id4,#id5,#id6,#id7,#id8,#id9,#id10,#id11,#id12,#id13,#id14,#id15,#id16,#id17,#id18,#id19,#id20,#id21,#id22,#id23,#id24{
+            border-radius: 12px;
+            height: 40px;
+            width: 50px;
+            
+        }
+        #id24{
+            height: 40px;
+            width: 105px;
+        }
+        .textview{
+            border-radius: 12px;
+            height: 50px;
+            width: 265px;
+        }
+        #id6,#id7,#id8,#id11,#id12,#id13,#id16,#id17,#id18,#id22{
+            background-color:  rgb(216, 243, 243);
+        }
+        #id24{
+            background-color: cornflowerblue;
+            color: white;
+            font-size: larger;
+        }
+        #id1,#id2,#id3,#id4,#id5,#id9,#id10,#id14,#id15,#id19,#id20,#id21,#id23{
+            background-color: rgb(192, 247, 247);
+            color: cornflowerblue;
+        }
+        
+    </style>
+    <body>
+        <script>
+              function insert(num)   
+              {  
+                document.form.textview.value = document.form.textview.value + num ;
+                
+              }
+               function backspace()  
+                      {  
+                       var exp = document.form.textview.value;  
+                       document.form.textview.value = exp.substring(0, exp.length - 1); 
+                      }
+               function clearInput(){
+                  var input = document.getElementById("textview");
+                   if (input.value !="") {
+                      input.value = "";
+                     }
+                  }
+               function equal()  
+                  {  
+                   var exp = document.form.textview.value;  
+                 if(exp)  
+                  {  
+                    document.form.textview.value = eval(exp); 
+                  }  
+                  }  
+        </script>
+        <div class="cal"> 
+            <form name = "form">  
+                <input class= "textview" name = "textview" id="textview">  
+            </form>     
+            <div class="one">
+            <button id="id1" onclick="insert('(')">(</button>
+            <button id="id2" onclick="insert(')')">)</button>
+            <button id="id3" onclick="equal()">ans</button>
+            <button id="id4" onclick="backspace()">del</button>
+            <button id="id5" onclick="clearInput()">clear</button>
+            </div>
+            <div class="two">
+            <button id="id6" onclick="insert('7')">7</button>
+            <button id="id7" onclick="insert('8')">8</button>
+            <button id="id8" onclick="insert('9')">9</button>
+            <button id="id9" onclick="insert('%')">%</button>
+            <button id="id10" onclick="insert('**')">^</button>
+            </div>
+            <div class="three">
+            <button id="id11" onclick="insert('4')">4</button>
+            <button id="id12" onclick="insert('5')">5</button>
+            <button id="id13" onclick="insert('6')">6</button>
+            <button id="id14" onclick="insert('*')">x</button>
+            <button id="id15" onclick="insert('&#247')">&#247</button>
+            </div>
+            <div class="four">
+            <button id="id16" onclick="insert('1')">1</button>
+            <button id="id17" onclick="insert('2')">2</button>
+            <button id="id18" onclick="insert('3')">3</button>
+            <button id="id19" onclick="insert('+')">+</button>
+            <button id="id20" onclick="insert('-')">-</button>
+            </div>
+            <div class="five">
+            <button id="id21" onclick="insert('.')">.</button>
+            <button id="id22" onclick="insert('0')">0</button>
+            <button id="id23" onclick="insert('&#177')">&#177</button>
+            <button id="id24" onclick="equal()" >ENTER</button>
+            </div>
+        </div>
+    </body>
+</html>
